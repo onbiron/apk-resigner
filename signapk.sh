@@ -11,8 +11,11 @@ APK=$1
 KEYSTORE=$2
 STOREPASS=$3
 ALIAS=$4
+# get the filename
+APK_BASENAME=$(basename $APK)
 
-SIGNED_APK="signed_"$APK
+
+SIGNED_APK="signed_"$APK_BASENAME
 
 #debug
 #echo param1 $APK
