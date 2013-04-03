@@ -7,21 +7,24 @@
 # param3, key storepass: android
 # param4, key alias: androiddebugkey
 
+USER_HOME=$(eval echo ~${SUDO_USER})
+
+# use my debug key default
 APK=$1
-KEYSTORE=$2
-STOREPASS=$3
-ALIAS=$4
+KEYSTORE="${2:-$USER_HOME/.android/debug.keystore}"
+STOREPASS="${3:-android}"
+ALIAS="${4:-androiddebugkey}"
+
+
 # get the filename
 APK_BASENAME=$(basename $APK)
-
-
 SIGNED_APK="signed_"$APK_BASENAME
 
 #debug
-#echo param1 $APK
-#echo param2 $KEYSTORE
-#echo param3 $STOREPASS
-#echo param4 $SIGNED_APK
+echo param1 $APK
+echo param2 $KEYSTORE
+echo param3 $STOREPASS
+echo param4 $ALIAS
 
 # delete META-INF folder
 zip -d $APK META-INF/\*
