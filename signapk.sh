@@ -18,7 +18,7 @@ ALIAS="${4:-androiddebugkey}"
 
 # get the filename
 APK_BASENAME=$(basename $APK)
-SIGNED_APK="signed_"$APK_BASENAME
+SIGNED_APK=$APK_BASENAME
 
 #debug
 echo param1 $APK
