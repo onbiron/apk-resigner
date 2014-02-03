@@ -30,7 +30,7 @@ echo param4 $ALIAS
 zip -d $APK META-INF/\*
 
 # sign APK
-jarsigner -verbose -keystore $KEYSTORE -storepass $STOREPASS $APK $ALIAS
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $KEYSTORE -storepass $STOREPASS $APK $ALIAS
 #verify
 jarsigner -verify $APK
 
